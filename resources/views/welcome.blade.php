@@ -1,14 +1,15 @@
 <x-app-layout>
 
 {{-- ═══════════ HERO ═══════════ --}}
-<section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#050f0d]">
-    {{-- animated background --}}
+<section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    {{-- Real photo background --}}
     <div class="absolute inset-0 z-0">
-        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-dmt-teal/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-400/10 rounded-full blur-[80px] animate-pulse delay-700"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#050f0d]/80 to-[#050f0d]"></div>
-        {{-- grid overlay --}}
-        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(69,139,145,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(69,139,145,0.5) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <img
+            src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=2070&q=80"
+            alt="Centre de tri DMT Recyclage"
+            class="w-full h-full object-cover">
+        {{-- Black overlay --}}
+        <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
     <div class="relative z-10 text-center max-w-5xl mx-auto px-6 pt-32">
@@ -16,18 +17,18 @@
             <span class="w-2 h-2 rounded-full bg-dmt-teal animate-ping"></span>
             <span class="text-dmt-teal text-xs font-bold uppercase tracking-[0.3em]">Île-de-France · Zéro Déchet</span>
         </div>
-        <h1 class="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter mb-8">
-            La <span class="text-transparent bg-clip-text bg-gradient-to-r from-dmt-teal to-emerald-300">nouvelle</span><br>ère du<br>recyclage.
+        <h1 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+            La <span class="text-transparent bg-clip-text bg-gradient-to-r from-dmt-teal to-emerald-300">nouvelle</span><br>ère du recyclage.
         </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed">
+        <p class="text-base text-slate-300 max-w-xl mx-auto mb-12 leading-relaxed">
             Collecte, tri, démantèlement — des solutions sur-mesure pour les entreprises et collectivités qui veulent changer les choses.
         </p>
-        <div class="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="#contact" class="group px-10 py-5 bg-dmt-teal text-white font-bold text-lg rounded-2xl hover:bg-dmt-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-dmt-teal/30">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="group px-8 py-4 bg-dmt-teal text-white font-bold text-sm rounded-xl hover:bg-dmt-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-dmt-teal/30">
                 Démarrer ma transition
                 <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
             </a>
-            <a href="#services" class="px-10 py-5 border border-white/10 text-white font-bold text-lg rounded-2xl hover:bg-white/5 transition-all duration-300 hover:border-white/30 backdrop-blur-md">
+            <a href="#services" class="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded-xl hover:bg-white/5 transition-all duration-300 hover:border-white/40 backdrop-blur-md">
                 Découvrir les services
             </a>
         </div>
@@ -51,13 +52,13 @@
 </section>
 
 {{-- ═══════════ SERVICES ═══════════ --}}
-<section id="services" class="bg-[#07110e] py-32">
+<section id="services" class="bg-white py-32">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-20">
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">Ce que nous faisons</span>
-            <h2 class="text-5xl md:text-7xl font-black text-white mt-4 leading-none">Nos Services</h2>
+            <h2 class="text-5xl md:text-7xl font-black text-slate-900 mt-4 leading-none">Nos Services</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @php
             $services = [
                 ['icon' => '♻️', 'title' => 'Collecte & Recyclage', 'desc' => 'Enlèvement planifié, tri optimisé, valorisation matière.', 'img' => 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&q=80'],
@@ -69,16 +70,15 @@
             ];
             @endphp
             @foreach($services as $s)
-            <div class="group relative overflow-hidden bg-[#07110e] hover:bg-[#0d1f1a] transition-colors duration-500 p-10 cursor-pointer">
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <img src="{{ $s['img'] }}" class="w-full h-full object-cover opacity-20 scale-110 group-hover:scale-100 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#07110e] via-[#07110e]/70 to-transparent"></div>
+            <div class="group relative overflow-hidden rounded-3xl border border-slate-100 bg-slate-50 hover:bg-slate-900 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl hover:-translate-y-1">
+                <div class="h-52 overflow-hidden">
+                    <img src="{{ $s['img'] }}" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700 opacity-70 group-hover:opacity-100">
                 </div>
-                <div class="relative z-10">
-                    <span class="text-4xl mb-6 block">{{ $s['icon'] }}</span>
-                    <h3 class="text-xl font-bold text-white mb-3">{{ $s['title'] }}</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">{{ $s['desc'] }}</p>
-                    <div class="mt-8 flex items-center gap-2 text-dmt-teal text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
+                <div class="p-8">
+                    <span class="text-3xl mb-4 block">{{ $s['icon'] }}</span>
+                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-white mb-3 transition-colors duration-300">{{ $s['title'] }}</h3>
+                    <p class="text-slate-500 group-hover:text-slate-400 text-sm leading-relaxed transition-colors duration-300">{{ $s['desc'] }}</p>
+                    <div class="mt-6 flex items-center gap-2 text-dmt-teal text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <span>En savoir plus</span>
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </div>
