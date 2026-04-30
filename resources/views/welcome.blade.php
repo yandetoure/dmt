@@ -56,7 +56,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-20">
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">Ce que nous faisons</span>
-            <h2 class="text-5xl md:text-7xl font-black text-slate-900 mt-4 leading-none">Nos Services</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-3 leading-tight">Nos Services</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @php
@@ -94,7 +94,7 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div>
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">Notre Engagement</span>
-            <h2 class="text-5xl md:text-6xl font-black text-slate-900 mt-4 mb-12 leading-tight">
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900 mt-3 mb-10 leading-tight">
                 Au-delà de la collecte <span class="text-dmt-teal">traditionnelle.</span>
             </h2>
             <div class="space-y-10">
@@ -128,7 +128,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">Vous êtes ?</span>
-            <h2 class="text-5xl md:text-6xl font-black text-white mt-4">Solutions sur-mesure</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-white mt-3">Solutions sur-mesure</h2>
         </div>
         <div class="flex justify-center gap-3 mb-16 flex-wrap">
             @foreach([['pro','Professionnel'],['collect','Collectivités & Syndics'],['part','Particulier']] as $t)
@@ -148,11 +148,11 @@
         <div x-show="tab==='{{ $key }}'" x-transition:enter="transition duration-500" x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0" @if($key!='pro') x-cloak @endif
              class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h3 class="text-4xl font-black text-white mb-4">{{ $sol[0] }}</h3>
-                <p class="text-slate-400 text-xl mb-12">{{ $sol[1] }}</p>
+                <h3 class="text-2xl font-black text-white mb-3">{{ $sol[0] }}</h3>
+                <p class="text-slate-400 text-base mb-10">{{ $sol[1] }}</p>
                 <ul class="space-y-6">
                     @foreach($sol[3] as $item)
-                    <li class="flex items-center gap-4 text-slate-300 text-lg">
+                    <li class="flex items-center gap-4 text-slate-300 text-sm">
                         <span class="w-8 h-8 rounded-xl bg-dmt-teal/10 text-dmt-teal flex items-center justify-center shrink-0">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
@@ -184,7 +184,7 @@
         </div>
         <div class="pt-4">
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">À Propos</span>
-            <h2 class="text-5xl font-black text-slate-900 mt-4 mb-10">Qui sommes-nous ?</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900 mt-3 mb-8">Qui sommes-nous ?</h2>
             <div class="flex gap-3 mb-10 flex-wrap">
                 @foreach([['qui','Notre Histoire'],['valeurs','Nos Valeurs'],['mission','Notre Mission']] as $t)
                 <button @click="tab='{{ $t[0] }}'"
@@ -194,16 +194,16 @@
             </div>
             <div class="min-h-[200px]">
                 <div x-show="tab==='qui'" x-transition:enter="transition duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                    <p class="text-xl text-slate-600 leading-relaxed mb-6">Fondée en Île-de-France, DMT Recyclage accompagne entreprises et collectivités dans la gestion proactive de leurs ressources.</p>
-                    <p class="text-slate-500 leading-relaxed">Nous ne sommes pas simplement un collecteur — nous sommes votre partenaire stratégique pour la transition vers l'économie circulaire.</p>
+                    <p class="text-base text-slate-600 leading-relaxed mb-4">Fondée en Île-de-France, DMT Recyclage accompagne entreprises et collectivités dans la gestion proactive de leurs ressources.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Nous ne sommes pas simplement un collecteur — nous sommes votre partenaire stratégique pour la transition vers l'économie circulaire.</p>
                 </div>
                 <div x-show="tab==='valeurs'" x-transition:enter="transition duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-cloak>
-                    <p class="text-xl text-slate-600 leading-relaxed mb-6"><strong>Transparence</strong>, <strong>réactivité</strong> et <strong>engagement durable</strong> sont les trois piliers de notre identité.</p>
-                    <p class="text-slate-500 leading-relaxed">Chaque intervention est traçable, documentée et remise à vos équipes sous forme de rapport complet.</p>
+                    <p class="text-base text-slate-600 leading-relaxed mb-4"><strong>Transparence</strong>, <strong>réactivité</strong> et <strong>engagement durable</strong> sont les trois piliers de notre identité.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Chaque intervention est traçable, documentée et remise à vos équipes sous forme de rapport complet.</p>
                 </div>
                 <div x-show="tab==='mission'" x-transition:enter="transition duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-cloak>
-                    <p class="text-xl text-slate-600 leading-relaxed mb-6">Notre mission : aider chaque client à <strong>atteindre le Zéro Déchet</strong> en valorisant 100% de ses ressources.</p>
-                    <p class="text-slate-500 leading-relaxed">Grâce à une flotte équipée et une équipe expérimentée, nous intervenons partout en Île-de-France sous 24h.</p>
+                    <p class="text-base text-slate-600 leading-relaxed mb-4">Notre mission : aider chaque client à <strong>atteindre le Zéro Déchet</strong> en valorisant 100% de ses ressources.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Grâce à une flotte équipée et une équipe expérimentée, nous intervenons partout en Île-de-France sous 24h.</p>
                 </div>
             </div>
             <div class="mt-12 grid grid-cols-3 gap-6">
@@ -223,7 +223,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20">
             <span class="text-dmt-teal text-sm font-bold uppercase tracking-[0.3em]">Confiance</span>
-            <h2 class="text-5xl md:text-6xl font-black text-slate-900 mt-4">Ils témoignent.</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900 mt-3">Ils témoignent.</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             @foreach([
@@ -233,7 +233,7 @@
             ] as $t)
             <div class="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                 <div class="flex gap-1 text-amber-400 text-xl mb-6">★★★★★</div>
-                <p class="text-slate-700 text-lg leading-relaxed mb-8 italic">{{ $t[0] }}</p>
+                <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">{{ $t[0] }}</p>
                 <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
                     <div class="w-12 h-12 rounded-2xl bg-dmt-teal/10 flex items-center justify-center text-dmt-teal font-black text-lg">
                         {{ strtoupper(substr($t[1], 0, 1)) }}
@@ -255,11 +255,11 @@
         <div class="relative rounded-[4rem] overflow-hidden bg-gradient-to-br from-dmt-teal to-emerald-600 p-20 shadow-2xl shadow-dmt-teal/20">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 30% 50%, white 1px, transparent 1px); background-size: 30px 30px;"></div>
             <div class="relative z-10">
-                <h2 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">Prêt à changer les choses ?</h2>
-                <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">Diagnostic gratuit + devis personnalisé sous 24h.</p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">Prêt à changer les choses ?</h2>
+                <p class="text-base text-white/80 mb-10 max-w-xl mx-auto">Diagnostic gratuit + devis personnalisé sous 24h.</p>
                 <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                    <a href="mailto:contact@dmt-recyclage.fr" class="px-12 py-5 bg-white text-dmt-teal font-black text-xl rounded-2xl hover:scale-105 transition-transform shadow-2xl">Obtenir mon devis</a>
-                    <a href="tel:0982381798" class="px-12 py-5 border-2 border-white/40 text-white font-bold text-xl rounded-2xl hover:bg-white/10 transition-all">09 82 38 17 98</a>
+                    <a href="mailto:contact@dmt-recyclage.fr" class="px-8 py-4 bg-white text-dmt-teal font-black text-sm rounded-xl hover:scale-105 transition-transform shadow-2xl">Obtenir mon devis</a>
+                    <a href="tel:0982381798" class="px-8 py-4 border-2 border-white/40 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all">09 82 38 17 98</a>
                 </div>
                 <div class="mt-12 flex flex-wrap justify-center gap-10 text-white/60 text-sm font-bold uppercase tracking-widest">
                     <span>✓ ISO 14001</span><span>✓ Traçabilité totale</span><span>✓ Intervention 24h</span>
