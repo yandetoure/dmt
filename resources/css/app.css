@@ -13,31 +13,39 @@
   --color-dmt-teal-800: #295457;
   --color-dmt-teal-900: #224447;
   --color-dmt-slate: #1e293b;
-  
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Studia-inspired Shadows & Radii */
-  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-  --shadow-premium-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+  --shadow-premium: 0 10px 30px -10px rgba(0,0,0,0.08);
+  --shadow-premium-hover: 0 25px 50px -15px rgba(0,0,0,0.15);
   --radius-premium: 1.5rem;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4,0,0.6,1) infinite;
 }
 
 @layer base {
   body {
-    @apply antialiased text-slate-900 bg-white selection:bg-dmt-teal/30 selection:text-dmt-teal-900;
+    @apply antialiased;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   }
+  ::selection { background: rgba(69,139,145,0.25); color: #224447; }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3.5 bg-dmt-teal hover:bg-dmt-teal-600 text-white rounded-full font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95;
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-dmt-teal hover:bg-dmt-teal-600 text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-dmt-teal/20 hover:shadow-xl hover:shadow-dmt-teal/30 hover:-translate-y-0.5 active:scale-95;
   }
-
   .card-premium {
-    @apply bg-white border border-slate-100 rounded-[2rem] p-8 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] transition-all duration-500 hover:-translate-y-1;
+    @apply bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] transition-all duration-500 hover:-translate-y-2;
   }
-
   .section-tag {
-    @apply inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-dmt-teal/10 border border-dmt-teal/20 text-xs font-bold uppercase tracking-widest text-dmt-teal-700 mb-6;
+    @apply inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-dmt-teal/10 border border-dmt-teal/20 text-xs font-black uppercase tracking-[0.2em] text-dmt-teal mb-6;
   }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
