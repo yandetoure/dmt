@@ -86,9 +86,9 @@
                          x-transition:enter-end="opacity-100 translate-y-0"
                          class="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2">
                         @foreach([
-                            ['Loi AGEC', '#contact'],
-                            ['Biodéchets obligatoire', '#contact'],
-                            ['Traçabilité des déchets', '#contact'],
+                            ['Chronologie', '/reglementation'],
+                            ['Loi AGEC', '/reglementation#agec'],
+                            ['Tri des biodéchets', '/reglementation#biod'],
                         ] as $item)
                         <a href="{{ $item[1] }}" @click="dropdown=null" class="block px-5 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-dmt-teal font-medium transition-colors">{{ $item[0] }}</a>
                         @endforeach

@@ -13,3 +13,7 @@ Route::get('/a-propos', function () {
 Route::get('/materiel', function () {
     return view('materiel');
 });
+
+Route::get('/reglementation', function () {
+    return view('reglementation');
+});
