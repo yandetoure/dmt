@@ -21,3 +21,11 @@ Route::get('/reglementation', function () {
 Route::get('/matieres', function () {
     return view('matieres');
 });
+
+Route::get('/actualites', function () {
+    return view('actualites');
+});
+
+Route::get('/actualites/{slug}', function ($slug) {
+    return view('actualite-show');
+});

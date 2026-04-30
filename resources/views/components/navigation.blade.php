@@ -100,7 +100,7 @@
                    :class="scrolled ? 'text-slate-600 hover:bg-slate-100' : 'text-white/80 hover:bg-white/10'">Matières</a>
 
                 {{-- Actualités --}}
-                <a href="#" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-200"
+                <a href="/actualites" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-200"
                    :class="scrolled ? 'text-slate-600 hover:bg-slate-100' : 'text-white/80 hover:bg-white/10'">Actualités</a>
 
                 {{-- CTA --}}
@@ -147,7 +147,7 @@
             <a href="/materiel" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Le Matériel</a>
             <a href="/reglementation" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Réglementation</a>
             <a href="/matieres" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Matières</a>
-            <a href="#" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Actualités</a>
+            <a href="/actualites" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Actualités</a>
             <div class="pt-2 pb-2">
                 <a href="{{ url('/#contact') }}" @click="open=false" class="block w-full py-3 text-center bg-dmt-teal text-white font-bold rounded-xl text-sm">Contact / Devis</a>
             </div>
