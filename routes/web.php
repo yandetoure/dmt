@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/a-propos', function () {
     return view('about');
 });
+
+Route::get('/materiel', function () {
+    return view('materiel');
+});

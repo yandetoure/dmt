@@ -34,12 +34,12 @@
                          x-transition:enter-end="opacity-100 translate-y-0"
                          class="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2">
                         @foreach([
-                            ['Les bacs plastiques', '#services'],
-                            ['Les caisses palettes', '#services'],
-                            ['Les rolls', '#services'],
-                            ['Les bennes', '#services'],
-                            ["Les points d'apport volontaires", '#services'],
-                            ['Les bioseaux', '#services'],
+                            ['Les bacs plastiques', '/materiel#bac'],
+                            ['Les caisses palettes', '/materiel#caisse'],
+                            ['Les rolls', '/materiel#roll'],
+                            ['Les bennes', '/materiel#benne'],
+                            ["Les points d'apport volontaires", '/materiel#pav'],
+                            ['Les bioseaux', '/materiel#bioseau'],
                         ] as $item)
                         <a href="{{ $item[1] }}" @click="dropdown=null" class="block px-5 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-dmt-teal font-medium transition-colors">{{ $item[0] }}</a>
                         @endforeach
@@ -60,12 +60,12 @@
                          x-transition:enter-end="opacity-100 translate-y-0"
                          class="absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2">
                         @foreach([
-                            ['Les bacs plastiques', '#services'],
-                            ['Les caisses palettes', '#services'],
-                            ['Les rolls', '#services'],
-                            ['Les bennes', '#services'],
-                            ["Les points d'apport volontaires", '#services'],
-                            ['Les bioseaux', '#services'],
+                            ['Les bacs plastiques', '/materiel#bac'],
+                            ['Les caisses palettes', '/materiel#caisse'],
+                            ['Les rolls', '/materiel#roll'],
+                            ['Les bennes', '/materiel#benne'],
+                            ["Les points d'apport volontaires", '/materiel#pav'],
+                            ['Les bioseaux', '/materiel#bioseau'],
                         ] as $item)
                         <a href="{{ $item[1] }}" @click="dropdown=null" class="block px-5 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-dmt-teal font-medium transition-colors">{{ $item[0] }}</a>
                         @endforeach
