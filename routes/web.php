@@ -10,6 +10,10 @@ Route::get('/a-propos', function () {
     return view('about');
 });
 
+Route::get('/services', function () {
+    return view('services');
+});
+
 Route::get('/materiel', function () {
     return view('materiel');
 });
