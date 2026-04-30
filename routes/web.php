@@ -17,3 +17,7 @@ Route::get('/materiel', function () {
 Route::get('/reglementation', function () {
     return view('reglementation');
 });
+
+Route::get('/matieres', function () {
+    return view('matieres');
+});

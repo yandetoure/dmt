@@ -96,7 +96,7 @@
                 </div>
 
                 {{-- Matières --}}
-                <a href="#services" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-200"
+                <a href="/matieres" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-200"
                    :class="scrolled ? 'text-slate-600 hover:bg-slate-100' : 'text-white/80 hover:bg-white/10'">Matières</a>
 
                 {{-- Actualités --}}
@@ -132,14 +132,21 @@
                     Nos Services <svg class="w-4 h-4 transition-transform" :class="sub==='s'?'rotate-180':''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div x-show="sub==='s'" class="pl-4 space-y-1 mt-1">
-                    @foreach(['Les bacs plastiques','Les caisses palettes','Les rolls','Les bennes',"Les points d'apport volontaires",'Les bioseaux'] as $item)
-                    <a href="#services" @click="open=false" class="block px-4 py-2 text-sm text-slate-500 hover:text-dmt-teal hover:bg-slate-50 rounded-xl">{{ $item }}</a>
+                    @foreach([
+                        ['Les bacs plastiques', '/materiel#bac'],
+                        ['Les caisses palettes', '/materiel#caisse'],
+                        ['Les rolls', '/materiel#roll'],
+                        ['Les bennes', '/materiel#benne'],
+                        ["Les points d'apport volontaires", '/materiel#pav'],
+                        ['Les bioseaux', '/materiel#bioseau'],
+                    ] as $item)
+                    <a href="{{ $item[1] }}" @click="open=false" class="block px-4 py-2 text-sm text-slate-500 hover:text-dmt-teal hover:bg-slate-50 rounded-xl">{{ $item[0] }}</a>
                     @endforeach
                 </div>
             </div>
-            <a href="#" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Le Matériel</a>
-            <a href="#" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Réglementation</a>
-            <a href="#" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Matières</a>
+            <a href="/materiel" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Le Matériel</a>
+            <a href="/reglementation" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Réglementation</a>
+            <a href="/matieres" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Matières</a>
             <a href="#" @click="open=false" class="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-xl">Actualités</a>
             <div class="pt-2 pb-2">
                 <a href="{{ url('/#contact') }}" @click="open=false" class="block w-full py-3 text-center bg-dmt-teal text-white font-bold rounded-xl text-sm">Contact / Devis</a>
